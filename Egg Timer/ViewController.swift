@@ -6,21 +6,22 @@
 //
 
 import UIKit
-import ImageIO
+ 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var timeRemaining: UILabel!
     @IBOutlet weak var eggImage: UIImageView!
     @IBOutlet weak var progressView: UIProgressView!
     
     @IBOutlet weak var timeOut: UILabel!
     
-    var counter : Int = 3*60
+    var counter : Int = 3
     var timer: Timer?
-    var seconds : Int = 3*60
+    var seconds : Int = 3
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        timeOut.isHidden = true
+         
         progressView.progress = 0.0
         
     }
@@ -30,11 +31,19 @@ class ViewController: UIViewController {
         if counter > 0 {
             print(counter)
             counter -= 1
+            var remaningSeconds = counter-(counter/60*60)
+            if remaningSeconds < 10 {
+                timeRemaining.text = "Time Remaining = \(counter/60) : 0\(remaningSeconds) "
+            }else{
+                timeRemaining.text = "Time Remaining = \(counter/60) : \(remaningSeconds) "
+            }
+            
             
             progressView.progress = 1.0 - Float(counter)/Float(seconds)
             
         }else{
-            timeOut.isHidden = false
+            timeOut.text = "Time out , Bon Appetit"
+            timeRemaining.text = ""
             timer?.invalidate()
         }
     }
@@ -44,25 +53,28 @@ class ViewController: UIViewController {
        
         timer?.invalidate()
         
+        timeRemaining.text = ""
+        timeOut.text = ""
         switch (sender as AnyObject).selectedSegmentIndex{
         case 0 : eggImage.image = UIImage(named: "Soft")
-                 counter = 3*60
+                 counter = 3
         case 1 : eggImage.image = UIImage(named: "Medium")
-                 counter = 5*60
+                 counter = 5
         case 2 : eggImage.image = UIImage(named: "hard")
-                 counter = 8*60
+                 counter = 8
         default : print("error")
        
         }
         seconds = counter
         progressView.progress = 0.0
         print(counter)
-        timeOut.isHidden = true
+        
     }
     
     
     @IBAction func startCoking(_ sender: Any) {
         print("start")
+        timer?.invalidate()
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(action), userInfo: nil, repeats: true)
     }
     

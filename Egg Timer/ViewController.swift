@@ -15,9 +15,9 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var timeOut: UILabel!
     
-    var counter : Int = 3
+    var counter : Int = 3*60
     var timer: Timer?
-    var seconds : Int = 3
+    var seconds : Int = 3*60
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,11 +57,11 @@ class ViewController: UIViewController {
         timeOut.text = ""
         switch (sender as AnyObject).selectedSegmentIndex{
         case 0 : eggImage.image = UIImage(named: "Soft")
-                 counter = 3
+                 counter = 3*60
         case 1 : eggImage.image = UIImage(named: "Medium")
-                 counter = 5
+                 counter = 5*60
         case 2 : eggImage.image = UIImage(named: "hard")
-                 counter = 8
+                 counter = 8*60
         default : print("error")
        
         }

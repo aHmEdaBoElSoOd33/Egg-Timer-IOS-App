@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Egg_Timer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Rgs-93-2GV">
+                                <rect key="frame" x="30" y="434.5" width="354" height="32"/>
+                                <segments>
+                                    <segment title="Soft"/>
+                                    <segment title="Medium"/>
+                                    <segment title="Hard"/>
+                                </segments>
+                                <color key="selectedSegmentTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="cokkingSegmant:" destination="BYZ-38-t0r" eventType="valueChanged" id="XhD-lm-OKH"/>
+                                </connections>
+                            </segmentedControl>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="V7R-1u-GN0">
+                                <rect key="frame" x="30" y="582.5" width="354" height="6"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="6" id="a4C-xs-Bz2"/>
+                                </constraints>
+                                <color key="progressTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="trackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How do you like your egg?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yfy-C6-O41">
+                                <rect key="frame" x="0.0" y="355" width="414" height="39.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Soft" translatesAutoresizingMaskIntoConstraints="NO" id="rCO-ma-a89">
+                                <rect key="frame" x="111" y="98" width="192" height="217"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N8i-Kx-dJD">
+                                <rect key="frame" x="176" y="495.5" width="62" height="62"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="N8i-Kx-dJD" secondAttribute="height" multiplier="1:1" id="yvj-dV-rL3"/>
+                                </constraints>
+                                <state key="normal" image="start"/>
+                                <connections>
+                                    <action selector="startCoking:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ecR-Qb-UcS"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time out , Bon Appetit " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fyO-v0-vlU">
+                                <rect key="frame" x="30" y="618.5" width="354" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.83691487299355971" green="0.9588945182623011" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="V7R-1u-GN0" firstAttribute="leading" secondItem="Rgs-93-2GV" secondAttribute="leading" id="07T-VE-KF7"/>
+                            <constraint firstItem="rCO-ma-a89" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="3g8-T0-yDS"/>
+                            <constraint firstItem="Yfy-C6-O41" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="65R-f3-3lH"/>
+                            <constraint firstItem="fyO-v0-vlU" firstAttribute="trailing" secondItem="V7R-1u-GN0" secondAttribute="trailing" id="6sX-WB-fwv"/>
+                            <constraint firstItem="Rgs-93-2GV" firstAttribute="top" secondItem="Yfy-C6-O41" secondAttribute="bottom" constant="40" id="Cro-Lh-Bdn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Rgs-93-2GV" secondAttribute="trailing" constant="30" id="Dfa-UC-7DM"/>
+                            <constraint firstItem="Rgs-93-2GV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EZa-SL-acF"/>
+                            <constraint firstItem="fyO-v0-vlU" firstAttribute="leading" secondItem="V7R-1u-GN0" secondAttribute="leading" id="HIc-QG-kP8"/>
+                            <constraint firstItem="V7R-1u-GN0" firstAttribute="trailing" secondItem="Rgs-93-2GV" secondAttribute="trailing" id="IhV-qM-GFk"/>
+                            <constraint firstItem="fyO-v0-vlU" firstAttribute="top" secondItem="V7R-1u-GN0" secondAttribute="bottom" constant="30" id="LYo-zE-ylH"/>
+                            <constraint firstItem="Rgs-93-2GV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="OQJ-tq-aCh"/>
+                            <constraint firstItem="Yfy-C6-O41" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="YMN-gu-oaP"/>
+                            <constraint firstItem="rCO-ma-a89" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="eFK-v5-SOe"/>
+                            <constraint firstItem="N8i-Kx-dJD" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.15" id="gmS-uZ-iGq"/>
+                            <constraint firstItem="N8i-Kx-dJD" firstAttribute="centerX" secondItem="Rgs-93-2GV" secondAttribute="centerX" id="iZ8-Ya-JKo"/>
+                            <constraint firstItem="V7R-1u-GN0" firstAttribute="top" secondItem="N8i-Kx-dJD" secondAttribute="bottom" constant="25" id="jgS-9d-z3J"/>
+                            <constraint firstItem="N8i-Kx-dJD" firstAttribute="top" secondItem="Rgs-93-2GV" secondAttribute="bottom" constant="30" id="npC-2G-ZCk"/>
+                            <constraint firstItem="Yfy-C6-O41" firstAttribute="top" secondItem="rCO-ma-a89" secondAttribute="bottom" constant="40" id="ofB-zi-kwi"/>
+                            <constraint firstItem="fyO-v0-vlU" firstAttribute="centerX" secondItem="V7R-1u-GN0" secondAttribute="centerX" id="oyQ-tA-fBh"/>
+                            <constraint firstItem="rCO-ma-a89" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.242188" id="snu-sm-GHC"/>
+                            <constraint firstItem="Yfy-C6-O41" firstAttribute="centerX" secondItem="rCO-ma-a89" secondAttribute="centerX" id="tJr-Qv-ZYF"/>
+                            <constraint firstItem="V7R-1u-GN0" firstAttribute="centerX" secondItem="N8i-Kx-dJD" secondAttribute="centerX" id="vfy-4x-964"/>
+                            <constraint firstItem="rCO-ma-a89" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.463768" id="x7l-07-0Vq"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="eggImage" destination="rCO-ma-a89" id="gWn-uS-jeI"/>
+                        <outlet property="progressView" destination="V7R-1u-GN0" id="RDW-g8-WYd"/>
+                        <outlet property="timeOut" destination="fyO-v0-vlU" id="hyN-2j-66F"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="95.652173913043484" y="37.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Soft" width="225" height="316"/>
+        <image name="start" width="236" height="213"/>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
